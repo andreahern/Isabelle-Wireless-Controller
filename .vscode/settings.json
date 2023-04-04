@@ -3,5 +3,8 @@
         "activityBar.background": "#0D3424",
         "titleBar.activeBackground": "#134932",
         "titleBar.activeForeground": "#F3FCF8"
-    }
+    },
+    "cSpell.words": [
+        "ROSLIB"
+    ]
 }
