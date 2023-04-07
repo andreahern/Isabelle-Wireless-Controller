@@ -16,7 +16,7 @@ export default function ArrowButton({direction, handleClick}) {
         }
     }
     return (
-    <button className="text-blue-500 hover:text-blue-400 active:text-blue-500" onClick={handleClick}>
+    <button className="text-blue-500 hover:text-blue-400 active:text-blue-500 bg-blue-300 p-4 rounded-md bg-opacity-50 hover:bg-blue-100 active:bg-blue-400" onClick={handleClick}>
         {setArrow()}
     </button>
     )
