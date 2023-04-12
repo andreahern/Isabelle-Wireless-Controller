@@ -1,6 +1,6 @@
 'use client';
 
-import  {createContext, useContext, Dispatch, setStateAction, useState} from 'react';
+import  {createContext, useContext, Dispatch, useState} from 'react';
 
 const GlobalContext = createContext({
     ros: null,
@@ -9,7 +9,7 @@ const GlobalContext = createContext({
     setIsConnected: () => false
 })
 
-export const GlobalContextProvider = ({ children }) => {
+export const GlobalContextProvider = ({ children  }) => {
     const [ros, setRos] = useState(null);
     const [isConnected, setIsConnected] = useState(false);
 
