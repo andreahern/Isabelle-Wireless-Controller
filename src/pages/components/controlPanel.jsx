@@ -65,7 +65,7 @@ export default function ControlPanel() {
 
 
     return (
-        <div className="w-1/4 h-1/4 bg-[#fffffa] rounded-md flex flex-col justify-center items-center shadow-2xl">
+        <div className="w-[90%] h-1/3 lg:w-1/4 lg:h-1/4 bg-[#fffffa] rounded-md flex flex-col justify-center items-center shadow-2xl">
             <div className="flex flex-col w-40 items-center space-y-4">
                 <ArrowButton direction="up"  handleClick={() => sendMoveCommand("up")} />
                 <div className="flex flex-row space-x-4 justify-center">
