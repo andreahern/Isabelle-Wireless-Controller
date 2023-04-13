@@ -11,24 +11,33 @@ export default function ControlPanel() {
         console.log(direction);
 
         let x_value, y_value;
+        let angular_direction;
 
         switch (direction) {
             case 'up':
-                x_value = 0;
-                y_value = 0.5;
+                x_value = 0.6;
+                y_value = 0;
+                angular_direction = 0
                 break;
             case 'left':
-                x_value = -0.5;
-                y_value = 0;
-                break;
-            case 'right':
-                x_value = 0.5;
-                y_value = 0;
-                break;
-            case 'down':
                 x_value = 0;
                 y_value = 0;
+                angular_direction = 1.2
                 break;
+            case 'right':
+                x_value = 0;
+                y_value = 0;
+                angular_direction = -1.2
+                break;
+            case 'down':
+                x_value = -0.6;
+                y_value = 0;
+                angular_direction = 0
+                break;
+            case 'off':
+                x_value = 0;
+                y_value = 0;
+                angular_direction = 0;
         }
 
         var twist = new ROSLIB.Message({
@@ -38,9 +47,9 @@ export default function ControlPanel() {
               z : 0.0
             },
             angular : {
-              x : 0.3,
+              x : 0.0,
               y : 0.0,
-              z : 0.0
+              z : angular_direction
             }
             })
         cmdVel.publish(twist);
@@ -65,7 +74,7 @@ export default function ControlPanel() {
 
 
     return (
-        <div className="w-[90%] h-1/3 lg:w-1/4 lg:h-1/4 bg-[#fffffa] rounded-md flex flex-col justify-center items-center shadow-2xl">
+        <div className="w-[90%] h-1/3 lg:w-1/4 lg:h-1/4 bg-[#fffffa] rounded-md flex flex-row justify-center items-center shadow-2xl space-x-10">
             <div className="flex flex-col w-40 items-center space-y-4">
                 <ArrowButton direction="up"  handleClick={() => sendMoveCommand("up")} />
                 <div className="flex flex-row space-x-4 justify-center">
@@ -74,6 +83,7 @@ export default function ControlPanel() {
                     <ArrowButton direction="right"  handleClick={() => sendMoveCommand("right")} />   
                 </div>
             </div>
+            <ArrowButton direction="off"  handleClick={() => sendMoveCommand("off")} />
         </div>
     );
 }

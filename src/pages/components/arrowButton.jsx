@@ -1,4 +1,4 @@
-import {ArrowUpIcon, ArrowLeftIcon, ArrowDownIcon, ArrowRightIcon} from '@heroicons/react/24/solid';
+import {ArrowUpIcon, ArrowLeftIcon, ArrowDownIcon, ArrowRightIcon, XMarkIcon} from '@heroicons/react/24/solid';
 var createReactClass = require('create-react-class');
 
 export default function ArrowButton({direction, handleClick}) {
@@ -13,6 +13,8 @@ export default function ArrowButton({direction, handleClick}) {
                 return <ArrowRightIcon className="h-6 w-6"/>
             case "down":
                 return <ArrowDownIcon className="h-6 w-6"/>
+            case "off":
+                return <XMarkIcon className="h-6 w-6" />
         }
     }
     return (

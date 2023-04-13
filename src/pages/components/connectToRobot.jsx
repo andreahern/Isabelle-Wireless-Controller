@@ -7,7 +7,7 @@ export default function ConnectToRobot() {
     const Connect = () => {
         setRos(
             new ROSLIB.Ros({
-              url : 'wss:///6.tcp.ngrok.io:17975'
+              url : 'ws://192.168.137.84:9090'
             }
           ));
     }
